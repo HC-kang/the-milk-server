@@ -5,11 +5,20 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "bun run --watch src/index.ts"
   },
+  "prisma": {
+    "seed": "bun run prisma/seeds/index.ts"
+  },
   "dependencies": {
+    "@elysiajs/swagger": "^1.1.5",
+    "@prisma/client": "5.20.0",
+    "cheerio": "^1.0.0",
     "elysia": "latest"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "bson": "^6.8.0",
+    "bun-types": "latest",
+    "prisma": "^5.20.0"
   },
-  "module": "src/index.js"
+  "module": "src/index.js",
+  "main": "src/index.js"
 }

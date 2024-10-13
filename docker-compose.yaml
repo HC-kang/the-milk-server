@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    command: ["mongod", "--replSet", "rs0", "--bind_ip_all", "--keyFile", "/data/mongodb-keyfile"]
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    volumes:
+      - mongo-data:/data/db
+      - ./mongodb-keyfile:/data/mongodb-keyfile
+    networks:
+      - mongo-network
+
+  mongodb-setup:
+    image: mongo:latest
+    container_name: mongodb-setup
+    depends_on:
+      - mongodb
+    networks:
+      - mongo-network
+    volumes:
+      - ./mongodb-keyfile:/data/mongodb-keyfile
+    entrypoint: ["bash", "-c"]
+    command: |
+      "sleep 10 && \
+      mongosh --host mongodb:27017 -u root -p rootpassword --eval '
+      config = {
+        _id: \"rs0\",
+        members: [
+          {_id: 0, host: \"mongodb:27017\"}
+        ]
+      };
+      rs.initiate(config);
+      '"
+
+  app:
+    build: .
+    container_name: elysiajs-app
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=mongodb://root:rootpassword@mongodb:27017/the_milk_dev?authSource=admin&replicaSet=rs0
+    depends_on:
+      - mongodb
+      - mongodb-setup
+    networks:
+      - mongo-network
+
+volumes:
+  mongo-data:
+
+networks:
+  mongo-network:
+    driver: bridge

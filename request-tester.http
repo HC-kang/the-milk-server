@@ -1,0 +1,33 @@
+### Get All
+GET http://localhost:3000/api/posts
+ACCEPT: application/json
+
+### Get By id
+GET http://localhost:3000/api/posts/670934236d3d28bb79a5f726
+ACCEPT: application/json
+
+### Create
+POST http://localhost:3000/api/posts
+Content-Type: application/json
+
+{
+    "title": "Post X",
+    "content": "Content X"
+}
+
+### Update
+PATCH http://localhost:3000/api/posts/670934236d3d28bb79a5f727
+Content-Type: application/json
+
+{
+    "title": "Post XXXXX",
+    "content": "Content XXXXX"
+}
+
+### Delete
+DELETE http://localhost:3000/api/posts/10
+ACCEPT: application/json
+
+### Start Scraping
+GET http://localhost:3000/api/scrapers
+ACCEPT: application/json
