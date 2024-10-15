@@ -1,0 +1,110 @@
+{
+    "name": "IFANS",
+    "baseUrl": "https://www.ifans.go.kr/knda/ifans/kor/pblct/PblctList.do",
+    "list": [
+        {
+            "name": "IFANS_FOCUS",
+            "queryParams": {
+                "menuCl": "P07",
+                "pageIndex": "1"
+            },
+            "active": true
+        },
+        {
+            "name": "IFANS_PERSPECTIVES",
+            "queryParams": {
+                "menuCl": "P18",
+                "pageIndex": "1"
+            },
+            "active": false
+        },
+        {
+            "name": "주요국제문제분석",
+            "queryParams": {
+                "menuCl": "P01",
+                "pageIndex": "1"
+            },
+            "active": false
+        },
+        {
+            "name": "정책연구시리즈",
+            "queryParams": {
+                "menuCl": "P03",
+                "pageIndex": "1"
+            },
+            "active": false
+        },
+        {
+            "name": "국제정세전망",
+            "queryParams": {
+                "menuCl": "P04",
+                "pageIndex": "1"
+            },
+            "active": false
+        },
+        {
+            "name": "일본정세보고",
+            "queryParams": {
+                "menuCl": "P20",
+                "pageIndex": "1"
+            },
+            "active": false
+        },
+        {
+            "name": "중국정세보고",
+            "queryParams": {
+                "menuCl": "P14",
+                "pageIndex": "1"
+            },
+            "active": false
+        },
+        {
+            "name": "국제법정책연구",
+            "queryParams": {
+                "menuCl": "P15",
+                "pageIndex": "1"
+            },
+            "active": false
+        },
+        {
+            "name": "한국외교구술기록총서",
+            "queryParams": {
+                "menuCl": "P16",
+                "pageIndex": "1"
+            },
+            "active": false
+        },
+        {
+            "name": "한국외교협상사례",
+            "queryParams": {
+                "menuCl": "P13",
+                "pageIndex": "1"
+            },
+            "active": false
+        },
+        {
+            "name": "IFANS 연구총서",
+            "queryParams": {
+                "menuCl": "P17",
+                "pageIndex": "1"
+            },
+            "active": false
+        },
+        {
+            "name": "IFANS STUDY REPORT",
+            "queryParams": {
+                "menuCl": "P19",
+                "pageIndex": "1"
+            },
+            "active": false
+        },
+        {
+            "name": "기타",
+            "queryParams": {
+                "menuCl": "P08",
+                "pageIndex": "1"
+            },
+            "active": false
+        }
+    ]
+}

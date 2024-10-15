@@ -31,3 +31,7 @@ ACCEPT: application/json
 ### Start Scraping
 GET http://localhost:3000/api/scrapers
 ACCEPT: application/json
+
+### ifans focus
+GET https://www.ifans.go.kr/knda/ifans/kor/pblct/PblctList.do?menuCl=P07&pageIndex=1
+ACCEPT: application/json

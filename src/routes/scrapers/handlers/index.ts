@@ -1,1 +1,1 @@
-export * from './ifans.parser';
+export * from './ifans/ifans.parser';
